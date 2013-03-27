@@ -1,4 +1,16 @@
 ProjThree::Application.routes.draw do
+  get "feedback/submit_feedback"
+
+  get "feedback/view_feedback"
+
+  get "popular_news/show_popular_news"
+
+  get "latest_news/show_latest_news"
+
+  get "sports_news/show_sports_news"
+
+  get "business_news/show_business_news"
+
   get "welcome/index"
 
   # The priority is based upon order of creation:
