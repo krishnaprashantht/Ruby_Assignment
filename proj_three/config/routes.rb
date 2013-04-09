@@ -1,10 +1,13 @@
 ProjThree::Application.routes.draw do
+<<<<<<< HEAD
   get "settings/view_settings_page"
 
   get "settings/set_settings"
 
   get "settings/retreive_settings"
 
+=======
+>>>>>>> 8d2cd4c58693106575e815d69b214da6e96c2cb2
   get "feedback/submit_feedback"
 
   get "feedback/view_feedback"

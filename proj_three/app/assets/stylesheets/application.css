@@ -12,6 +12,7 @@
  *= require_tree .
  */
  
+<<<<<<< HEAD
 .Layout{
 	background-color: #F5FFFA;
 } 
@@ -20,10 +21,13 @@
 	height: 15%;
  }
  
+=======
+>>>>>>> 8d2cd4c58693106575e815d69b214da6e96c2cb2
  .textAlignCenter{
     text-align: center;
 }
 
+<<<<<<< HEAD
 .mainLayout{
 	height: 60%;
 	width:100%;
@@ -153,12 +157,84 @@
 	/*max-height: 11px !important;*/
 	float:right;
 	padding-bottom:5% !important;
+=======
+.contentLayout{
+	height: 300px;
+	width:850px;
+	border: 1px solid;
+	padding-top: 70px;
+	padding-bottom: 70px;
+	float: left;
+}
+
+.contentMenu{
+	height: 300px;
+	width: 200px;
+	border: 1px solid;
+	padding-top: 70px;
+	padding-bottom: 70px;
+	float: left;
+}
+
+.feedback{
+	height: 300px;
+	width: 275px;
+	border: 1px solid;
+	padding-top: 70px;
+	padding-bottom: 70px;
+	float: left;
+}
+
+.footerLayout{
+	height: 50px;
+	width:850px;
+	border: 1px solid;
+	float: left;
+}
+
+.footerRights{
+	float:left;
+}
+
+.footerContact{
+	float: right;
+}
+
+.feedbackSpacing{
+	border-spacing: 25px;
+}
+
+.businessNews{
+	max-height: 20px; !important;
+	float: left;
+}
+
+.sportsNews{
+	float: left;
+}
+
+.latestNews{
+	float: left;
+}
+
+.popularNews{
+	float: left;
+}
+
+.arrowImage{
+	float: right;
+}
+
+.sportsNews{
+	padding-top: 500px;
+>>>>>>> 8d2cd4c58693106575e815d69b214da6e96c2cb2
 }
 
 #content {
     padding: 10px;
     margin-left: -2px;
     overflow: hidden;
+<<<<<<< HEAD
 }
 
 /* For Pagination */
@@ -206,3 +282,6 @@ text-decoration:none;
 border:solid 1px #666666;
 }
 
+=======
+}
+>>>>>>> 8d2cd4c58693106575e815d69b214da6e96c2cb2
