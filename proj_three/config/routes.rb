@@ -1,5 +1,27 @@
 ProjThree::Application.routes.draw do
+  get "settings/view_settings_page"
+
+  get "settings/set_settings"
+
+  get "settings/retreive_settings"
+
+  get "feedback/submit_feedback"
+
+  get "feedback/view_feedback"
+
+  get "popular_news/show_popular_news"
+
+  get "latest_news/show_latest_news"
+
+  get "sports_news/show_sports_news"
+
+  get "business_news/show_business_news"
+
   get "welcome/index"
+  
+  match "feedback/submit_feedback" => "feedback#submit_feedback"
+  
+  match "settings/set_settings" => "settings#set_settings"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
