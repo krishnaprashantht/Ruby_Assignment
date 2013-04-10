@@ -1,5 +1,4 @@
 class FeedbackController < ApplicationController
-<<<<<<< HEAD
 
 	
 	def submit_feedback
@@ -23,11 +22,4 @@ class FeedbackController < ApplicationController
   end
 
 
-=======
-  def submit_feedback
-  end
-
-  def view_feedback
-  end
->>>>>>> 8d2cd4c58693106575e815d69b214da6e96c2cb2
 end

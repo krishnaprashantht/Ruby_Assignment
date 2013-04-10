@@ -11,7 +11,6 @@
   <%= javascript_include_tag "bootstrap" %>
   <%= javascript_include_tag "bootstrap.min" %>
   <%= javascript_include_tag "jquery.min" %>
-<<<<<<< HEAD
   <%= javascript_include_tag "jquery-1.9.1" %>
   <%= javascript_include_tag "jquery-ui" %>
   <%= csrf_meta_tags %>
@@ -144,81 +143,6 @@
 		
 		<h6>All rights reserved</h6>
 	
-=======
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<div id="header" class="container-fluid, navbar-inner">
-	
-		<h1 class="textAlignCenter">Welcome to News Dash Board</h1>
-	
-	</div>
-	
-	<div id="content_menu" class="contentMenu">
-	
-		<div id="business_news" class="businessNews, navbar-inner">
-			<h5>Business News</h5>
-			<div id="image" class="arrowImage">
-				<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "business_news", :action => "show_business_news"})  %>
-			</div>
-		</div>
-		
-		<br><br>
-		
-		<div id="sports_news" class="sportsNews, navbar-inner">
-			<h5>Sports News</h5>
-			<div id="image" class="arrowImage">
-				<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "sports_news", :action => "show_sports_news"})  %>
-			</div>
-		</div>
-		
-		<br><br>
-		
-		<div id="latest_news" class="latestNews, navbar-inner">
-			<h5>Latest News</h5>
-			<div id="image" class="arrowImage">
-				<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "latest_news", :action => "show_latest_news"})  %>
-			</div>
-		</div>
-		
-		<br><br>
-		
-		<div id="popular_news" class="popularNews, navbar-inner">
-			<h5>Popular News</h5>
-			<div id="image" class="arrowImage">
-				<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "popular_news", :action => "show_popular_news"})  %>
-			</div>
-		</div>
-	
-	</div>
-		
-	<div id="content" class="contentLayout">
-	
-<%= yield %>
-
-	</div>
-	<div id="feedback" class="feedback">
-		
-		<%= form_for :feedback, :url => { :controller => 'feedback', :action => 'submit_feedback', :class => 'feedbackSpacing' } do |f| %>
-			<%= f.label :name %><br />
-			<%= f.text_field :name, :size => 20 %><br />
-			<%= f.label :email %><br />
-			<%= f.text_field :email, :size => 25 %><br />
-			<%= f.label :feedback %><br />
-			<%= f.text_area :feedback, :rows => 5, :cols => 5 %><br />
-			<%= submit_tag "Submit Feedback "%>
-		<% end %>
-	</div>
-	
-	<div id="footer" class="footerLayout">
-		<div id="footer_rights" class="footerRights>
-			<h6>All rights reserved</h6>
-		</div>
-		<div id="footer_contact" class="footerContact">
-			<h6>Developed & maintained by<h6><br>Krishna Prashanth T, FIRM
-		</div>
-		
->>>>>>> 8d2cd4c58693106575e815d69b214da6e96c2cb2
 	</div>
 	
 </body>
