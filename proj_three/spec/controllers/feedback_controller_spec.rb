@@ -1,16 +1,10 @@
 require 'spec_helper'
 
-describe Feedback do
-
-	it "has a valid factory" do
-  
-		@feedback = Factory.create(:feedback)
-		@feedback.should be_valid
-		
-	end
-	  
-	it "insert feedabck along with user name and user email" do
+describe FeedbackController do
 	
+	describe "submit feedback" do
+		it "inserting feedback" do
+			
 		@feedback = Factory.create(:feedback, :name => "Krishna Prashanth T")
 		@feedback.name.should == "Krishna Prashanth T"
 			
@@ -20,6 +14,21 @@ describe Feedback do
 		@feedback = Factory.create(:feedback, :feedback => "Nice application")
 		@feedback.feedback.should == "Nice application"
 		
+		end
 	end
 	
 end
+
+
+
+
+#	def view_feedback
+  
+#		page_number = params[:page];
+#		@feedbacks = Feedback.view_feedback(page_number)
+#		@preferences = Preference.get_preference
+
+#	end
+
+
+

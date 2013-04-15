@@ -4,6 +4,7 @@ Factory.define :feedback do |f|
 	f.name 'Krishna Prashanth '
 	f.email 'krishnaprashanth.t@tcs.com'
 	f.feedback 'Nice application'
+
 end
 
 Factory.define :preference do |p|

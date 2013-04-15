@@ -6,6 +6,10 @@ describe Preference do
   
 		@preference = Factory.create(:preference)
 		@preference.should be_valid
+		
+	end
+	
+	it "insert preferences of the user" do
   		
 		@preference = Factory.create(:preference, :business_news_preference => 1)
 		@preference.business_news_preference.should == 1
