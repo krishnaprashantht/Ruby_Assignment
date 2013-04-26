@@ -9,7 +9,7 @@ class FeedbackController < ApplicationController
 	
 		Feedback.insert_feedback(name, email, feedback)
 		@preferences = Preference.get_preference
-	
+				
 	end
 	
 
@@ -18,7 +18,7 @@ class FeedbackController < ApplicationController
 		page_number = params[:page];
 		@feedbacks = Feedback.view_feedback(page_number)
 		@preferences = Preference.get_preference
-
+				
   end
 
 

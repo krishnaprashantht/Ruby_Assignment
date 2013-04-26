@@ -14,12 +14,4 @@
 //= require jquery_ujs
 //= require_tree .
 
-<script src="jquery.min.js"></script>
-<script src="jquery-1.9.1.js"></script>
-<script src="jquery-ui.js"></script>
-
- 
-$(function() {
-	$( "#business_news" ).draggable();
-});
 

@@ -18,7 +18,7 @@ class Preference < ActiveRecord::Base
   
 	def self.get_preference
 				
-		Preference.find(first)
+		Preference.first
 		
 	end
   

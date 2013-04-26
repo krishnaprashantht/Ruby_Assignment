@@ -29,7 +29,6 @@
 			<script>	
 				$(function() {
 					$( "#business_news" ).draggable({ containment: "parent" });
-					$( "#business_news" ).draggable({ containment: "parent" });
 					$( "#sports_news" ).draggable({ containment: "parent" });
 					$( "#latest_news" ).draggable({ containment: "parent" });
 					$( "#popular_news" ).draggable({ containment: "parent" });
@@ -39,6 +38,7 @@
 			</script>
 			
 			<br>
+			
 			
 			<% if @preferences.business_news_preference == 1 %>
 			
@@ -116,10 +116,10 @@
 	
 		</div>
 		
-		<div id="content" class="contentLayout">
-	
+		<div id="content_layout" class="contentLayout">
+			
 			<%= yield %>
-
+			
 		</div>
 	
 		<div id="feedback" class="feedback">
