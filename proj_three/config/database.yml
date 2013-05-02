@@ -5,9 +5,9 @@
 #   gem 'sqlite3'
 development:
   adapter: oracle_enhanced
-  database: XE.world
-  username: hr
-  password: hr
+  database: ORACLE_XE
+  username: rubyassignment
+  password: rubyassignment
   
   
 # Warning: The database defined as "test" will be erased and
