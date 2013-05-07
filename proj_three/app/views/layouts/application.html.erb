@@ -20,130 +20,157 @@
 	<div id="header" class="header, container-fluid, navbar-inner">
 	
 		<h1 class="textAlignCenter">News Dash Board</h1>
+
+		<% if current_user %>
+
+			<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+
+		<% end %>
 	
 	</div>
 	
 	<div id="main_layout" class="mainLayout">
-		<div id="content_menu" class="contentMenu">
+
+		<% if current_user %>
+
+			<div id="content_menu" class="contentMenu">
 			
-			<script>	
-				$(function() {
-					$( "#business_news" ).draggable({ containment: "parent" });
-					$( "#sports_news" ).draggable({ containment: "parent" });
-					$( "#latest_news" ).draggable({ containment: "parent" });
-					$( "#popular_news" ).draggable({ containment: "parent" });
-					$( "#view_feedbacks" ).draggable({ containment: "parent" });
-					$( "#tab_settings" ).draggable({ containment: "parent" });
-				});
-			</script>
+				<script>	
+					$(function() {
+						$( "#business_news" ).draggable({ containment: "parent" });
+						$( "#sports_news" ).draggable({ containment: "parent" });
+						$( "#latest_news" ).draggable({ containment: "parent" });
+						$( "#popular_news" ).draggable({ containment: "parent" });
+						$( "#view_feedbacks" ).draggable({ containment: "parent" });
+						$( "#tab_settings" ).draggable({ containment: "parent" });
+					});
+				</script>
 			
-			<br>
-			
+				<br>
 			
 			<% if @preferences.business_news_preference == 1 %>
-			
+									
 				<div id="business_news" class="businessNews, navbar-inner">
 					<h5 class="newsText">Business News</h5>
 					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "business_news", :action => "show_business_news"})  %>
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "devise/business_news", :action => "show_business_news"})  %>
 					</div>
 				</div>
-			
+						
 			<% end %>
-		
-			<br><br>
+
+				<br><br>
 			
 			<% if @preferences.sports_news_preference == 1 %>
 			
 				<div id="sports_news" class="sportsNews, navbar-inner">
 					<h5 class="newsText">Sports News</h5>
 					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "sports_news", :action => "show_sports_news"})  %>
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "devise/sports_news", :action => "show_sports_news"})  %>
 					</div>
 				</div>
 			
 			<% end %>
 		
-			<br><br>
+				<br><br>
 			
 			<% if @preferences.latest_news_preference == 1 %>
-		
+			
 				<div id="latest_news" class="latestNews, navbar-inner">
 					<h5  class="newsText">Latest News</h5>
 					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "latest_news", :action => "show_latest_news"})  %>
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "devise/latest_news", :action => "show_latest_news"})  %>
 					</div>
 				</div>
 		
-			<% end %>
+			<% end %>			
 		
-			<br><br>
+				<br><br>
 			
 			<% if @preferences.popular_news_preference == 1 %>
-		
+			
 				<div id="popular_news" class="popularNews, navbar-inner">
 					<h5  class="newsText">Popular News</h5>
 					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:onclick => "popularNews()", :controller => "popular_news", :action => "show_popular_news"})  %>
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:onclick => "popularNews()", :controller => "devise/popular_news", :action => "show_popular_news"})  %>
 					</div>
 				</div>
-			
+						
 			<% end %>
-			
-			<br><br>
+
+				<br><br>
 			
 			<% if @preferences.view_feedbacks_preference == 1 %>
 			
 				<div id="view_feedbacks" class="viewFeedback, navbar-inner">
 					<h5  class="newsText">View Feedbacks</h5>
 					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "feedback", :action => "view_feedback"})  %>
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "devise/feedback", :action => "view_feedback"})  %>
 					</div>
 				</div>
 				
 			<% end %>
 			
-			<br><br>
+				<br><br>
 			
-			<div id="tab_settings" class="tabSettings, navbar-inner">
-				<h5  class="newsText">Settings</h5>
-				<div id="image" class="arrowImage">
-					<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "settings", :action => "view_settings_page"})  %>
+				<div id="tab_settings" class="tabSettings, navbar-inner">
+					<h5  class="newsText">Settings</h5>
+					<div id="image" class="arrowImage">
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "devise/settings", :action => "view_settings_page"})  %>
+					</div>
 				</div>
-			</div>
 			
-		
-	
-		</div>
-		
+			</div>
+
+		<% end %>
+
 		<div id="content_layout" class="contentLayout">
 			
+			<% if flash[:alert] %>
+           		<p class="flash-error"><%= flash[:alert] %></p>
+          	<% end %>
+          
+          	<% if flash[:notice] %>
+          		<p class="flash-notice"><%= flash[:notice] %></p>
+          	<% end %>
+
 			<%= yield %>
 			
 		</div>
+
+		<% if current_user %>
 	
-		<div id="feedback" class="feedback">
+			<div id="feedback" class="feedback">
 		
-			<h2>Feedback</h2>
+				<h2>Feedback</h2>
 		
-			<%= form_for :feedback, :url => { :controller => 'feedback', :action => 'submit_feedback', :method => 'post', :class => 'feedbackSpacing' } do |f| %>
-				<%= f.label :name %>
-				<%= f.text_field :name, :size => 20 %><br />
-				<%= f.label :email %>
-				<%= f.text_field :email, :size => 25 %><br />
-				<%= f.label :feedback %>
-				<%= f.text_area :feedback, :rows => 5, :cols => 5 %><br />
-				<%= submit_tag "Submit Feedback "%>
-			<% end %>
+				<%= form_for :feedback, :url => { :controller => 'feedback', :action => 'submit_feedback', :method => 'post', :class => 'feedbackSpacing' } do |f| %>
+					<%= f.label :name %>
+					<%= f.text_field :name, :size => 20 %><br />
+					<%= f.label :email %>
+					<%= f.text_field :email, :size => 25 %><br />
+					<%= f.label :feedback %>
+					<%= f.text_area :feedback, :rows => 5, :cols => 5 %><br />
+					<%= submit_tag "Submit Feedback "%>
+				<% end %>
+			</div>
+
+		<% end %>
+		
+	</div>
+
+	<% if current_user %>
+	
+		<div id="footer" class="footerLayout">
+		
+			<h6>All rights reserved</h6>
+	
 		</div>
-		
-	</div>
-	
-	<div id="footer" class="footerLayout">
-		
-		<h6>All rights reserved</h6>
-	
-	</div>
+
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+
+	<% end %>
 	
 </body>
 </html>

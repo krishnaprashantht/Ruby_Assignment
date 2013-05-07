@@ -1,27 +1,33 @@
 ProjThree::Application.routes.draw do
-  get "settings/view_settings_page"
+  get "devise/user/add_user"
 
-  get "settings/set_settings"
+  get "home/index"
 
-  get "settings/retreive_settings"
+  devise_for :users, path_names: { sign_out: 'sign_out' }
 
-  get "feedback/submit_feedback"
+  get "devise/settings/view_settings_page"
 
-  get "feedback/view_feedback"
+  get "devise/settings/set_settings"
 
-  get "popular_news/show_popular_news"
+  get "devise/settings/retreive_settings"
 
-  get "latest_news/show_latest_news"
+  get "devise/feedback/submit_feedback"
 
-  get "sports_news/show_sports_news"
+  get "devise/feedback/view_feedback"
 
-  get "business_news/show_business_news"
+  get "devise/popular_news/show_popular_news"
+
+  get "devise/latest_news/show_latest_news"
+
+  get "devise/sports_news/show_sports_news"
+
+  get "devise/business_news/show_business_news"
 
   get "welcome/index"
   
-  match "feedback/submit_feedback" => "feedback#submit_feedback"
+  match "devise/feedback/submit_feedback" => "feedback#submit_feedback"
   
-  match "settings/set_settings" => "settings#set_settings"
+  match "devise/settings/set_settings" => "settings#set_settings"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -72,7 +78,9 @@ ProjThree::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'welcome#index'
+   #root :to => 'welcome#index'
+
+   root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 

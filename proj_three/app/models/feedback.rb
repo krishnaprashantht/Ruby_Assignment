@@ -1,13 +1,6 @@
 class Feedback < ActiveRecord::Base
 	attr_accessible :name, :email, :feedback
 	
-	def self.up
-		create_table :feedbacks do |f|
-			f.string :name
-			f.string :email
-			f.text :feedback
-		end
-	end
 	
 	def self.insert_feedback(name, email, feedback)
 		Feedback.create(:name => name, :email => email, :feedback => feedback)    
@@ -19,7 +12,5 @@ class Feedback < ActiveRecord::Base
 		
 	end
 
-	def self.down
-		drop_table :feedbacks
-	end
+	
 end
