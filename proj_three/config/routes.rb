@@ -1,45 +1,45 @@
 ProjThree::Application.routes.draw do
  
  
-  get "devise/user/view_user_settings_page"
+  get "user/view_user_settings_page"
 
-  get "devise/user/view_add_user_page"
+  get "user/view_add_user_page"
 
-  get "devise/user/view_remove_user_page"
+  get "user/view_remove_user_page"
 
-  get "devise/user/view_users"
+  get "user/view_users"
 
-  get "devise/user/add_user"
+  get "user/add_user"
 
-  get "devise/user/remove_user"
+  get "user/remove_user"
 
-  match "devise/user/add_user" => "user#add_user"
+  match "user/add_user" => "user#add_user"
 
   get "home/index"
 
   devise_for :users, path_names: { sign_out: 'sign_out' }
 
-  get "devise/settings/view_settings_page"
+  get "settings/view_settings_page"
 
-  get "devise/settings/set_settings"
+  get "settings/set_settings"
 
   get "devise/settings/retreive_settings"
 
-  get "devise/feedback/submit_feedback"
+  get "feedback/submit_feedback"
 
-  get "devise/feedback/view_feedback"
+  get "feedback/view_feedback"
 
-  get "devise/popular_news/show_popular_news"
+  get "popular_news/show_popular_news"
 
-  get "devise/latest_news/show_latest_news"
+  get "latest_news/show_latest_news"
 
-  get "devise/sports_news/show_sports_news"
+  get "sports_news/show_sports_news"
 
-  get "devise/business_news/show_business_news"
+  get "business_news/show_business_news"
   
-  match "devise/feedback/submit_feedback" => "feedback#submit_feedback"
+  match "feedback/submit_feedback" => "feedback#submit_feedback"
   
-  match "devise/settings/set_settings" => "settings#set_settings"
+  match "settings/set_settings" => "settings#set_settings"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

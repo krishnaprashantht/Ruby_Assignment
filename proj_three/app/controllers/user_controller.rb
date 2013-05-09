@@ -29,18 +29,15 @@ class UserController < ApplicationController
 
     email = params[:user][:email] 
     password = params[:user][:password] 
-    confirmpassword = params[:user][:confirmpassword] 
     admin = params[:admin] 
 
-    puts "\n\n\n\nadmin: #{admin}"
-  
     if admin.nil?
-      role = ""
+      role = "user"
     else
       role = "admin"
     end
 
-    User.add_user(email, password, confirmpassword, role)
+    User.add_user(email, password, role)
 
     @preferences = Preference.get_preference
 

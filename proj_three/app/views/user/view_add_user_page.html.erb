@@ -1,15 +1,12 @@
 <h2 class="textAlignCenter">Add User</h2>
 
-<%= form_for :user, :url => { :controller => 'devise/user', :action => 'add_user', :class => 'feedbackSpacing' } do |u| %>
+<%= form_for :user, :url => { :controller => 'user', :action => 'add_user', :class => 'feedbackSpacing' } do |u| %>
 
 	<%= u.label :Email %>
-	<%= u.text_field :email, :size => 25 %><br />
+	<%= u.text_field :email, :type => "email", :size => 25 %><br />
 	
 	<%= u.label :Password %>
 	<%= u.text_field :password, :type => "password", :size => 25 %><br />
-
-	<%= u.label :ConfirmPassword %>
-	<%= u.text_field :confirmpassword, :type => "password", :size => 25 %><br />
 
 	<%= check_box_tag(:admin) %>
 	<%= label_tag(:admin, "Make Admin") %>

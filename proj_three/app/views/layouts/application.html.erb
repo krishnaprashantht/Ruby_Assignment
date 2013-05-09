@@ -43,6 +43,7 @@
 						$( "#popular_news" ).draggable({ containment: "parent" });
 						$( "#view_feedbacks" ).draggable({ containment: "parent" });
 						$( "#tab_settings" ).draggable({ containment: "parent" });
+						$( "#moderate_users" ).draggable({ containment: "parent" });	
 					});
 				</script>
 			
@@ -53,7 +54,7 @@
 				<div id="business_news" class="businessNews, navbar-inner">
 					<h5 class="newsText">Business News</h5>
 					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "devise/business_news", :action => "show_business_news"})  %>
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "business_news", :action => "show_business_news"})  %>
 					</div>
 				</div>
 						
@@ -66,7 +67,7 @@
 				<div id="sports_news" class="sportsNews, navbar-inner">
 					<h5 class="newsText">Sports News</h5>
 					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "devise/sports_news", :action => "show_sports_news"})  %>
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "sports_news", :action => "show_sports_news"})  %>
 					</div>
 				</div>
 			
@@ -79,7 +80,7 @@
 				<div id="latest_news" class="latestNews, navbar-inner">
 					<h5  class="newsText">Latest News</h5>
 					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "devise/latest_news", :action => "show_latest_news"})  %>
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "latest_news", :action => "show_latest_news"})  %>
 					</div>
 				</div>
 		
@@ -92,7 +93,7 @@
 				<div id="popular_news" class="popularNews, navbar-inner">
 					<h5  class="newsText">Popular News</h5>
 					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:onclick => "popularNews()", :controller => "devise/popular_news", :action => "show_popular_news"})  %>
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "popular_news", :action => "show_popular_news"})  %>
 					</div>
 				</div>
 						
@@ -105,7 +106,7 @@
 				<div id="view_feedbacks" class="viewFeedback, navbar-inner">
 					<h5  class="newsText">View Feedbacks</h5>
 					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "devise/feedback", :action => "view_feedback"})  %>
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "feedback", :action => "view_feedback"})  %>
 					</div>
 				</div>
 				
@@ -113,19 +114,23 @@
 
 			<br>
 
+			<% if current_user.role == "admin" %>
+
 				<div id="moderate_users" class="moderateUsers, navbar-inner">
 					<h5 class="newsText">Moderate Users</h5>
 					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "devise/user", :action => "view_user_settings_page"})  %>
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "user", :action => "view_user_settings_page"})  %>
 					</div>
 				</div>
 			
+			<% end %>
+
 				<br>
 			
 				<div id="tab_settings" class="tabSettings, navbar-inner">
 					<h5  class="newsText">Settings</h5>
 					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "devise/settings", :action => "view_settings_page"})  %>
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "settings", :action => "view_settings_page"})  %>
 					</div>
 				</div>
 

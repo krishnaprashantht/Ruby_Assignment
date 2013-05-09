@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role
   # attr_accessible :title, :body
 
-  def self.add_user(email, password, confirmpassword, role)
+  def self.add_user(email, password, role)
 		User.create(:email => email, :password => password, :role => role)    
 	end
   
