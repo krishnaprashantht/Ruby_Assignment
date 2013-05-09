@@ -79,7 +79,28 @@
 	background-position: 50% 50%;
 }
 
-.businessNews, .sportsNews, .latestNews, .popularNews, .viewFeedback, .tabSettings{
+.userSpacing{
+	padding-top: 20px;
+	padding-left: 100px;
+	border-spacing: 50px;
+	background-position: 50% 50%;	
+}
+
+
+.emailHeading, .roleHeading{
+	padding-top: 10px;
+	font-size: 25px;
+	font-weight: bolder;
+	padding-bottom: 10px;
+}
+
+.email, .role{
+	font-size: 20px;
+	padding-left: 5px;
+	padding-right: 20px;
+	
+}
+.businessNews, .sportsNews, .latestNews, .popularNews, .viewFeedback, .tabSettings, .moderateUsers{
 	/*min-height: 10px !important;*/
 	/*max-height: 11px !important;*/
 	

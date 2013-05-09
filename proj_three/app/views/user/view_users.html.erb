@@ -1,0 +1,50 @@
+<div id="users_heading" class="feedbackHeading">
+
+	<h3 class="textAlignCenter">USERS</h3>
+
+</div>
+
+<div id="page_list" class="pageList">
+
+	<div id="paginate_list" class="paginateList">
+		
+		<ul id="pagination-flickr">
+			<li><a href="?page=1">1</a></li>
+			<li><a href="?page=2">2</a></li>
+			<li><a href="?page=3">3</a></li>
+			<li><a href="?page=4">4</a></li>
+			<li><a href="?page=5">5</a></li>
+			<li><a href="?page=6">6</a></li>
+		</ul>	
+		
+	</div>
+	
+</div>
+	
+<div id="user_details" class="userSpacing">
+
+	<table border="1">
+
+		<th><span id="email_heading" class="emailHeading">EMAIL</span></th>
+		<th><span id="role_heading" class="roleHeading">ROLE</span></th>
+		
+			<% @users.each do |u| %>
+
+				<tr>
+
+					<td><span id="email" class="email"><%= u.email %></span></td>
+					<% if u.role == "admin" %>
+						<td><span id="role" class="role">Admin</span></td>
+					<% else %>
+						<td><span id="role" class="role">User</span></td>
+					<% end %>
+
+				</tr>
+
+			<% end %>
+
+		</th>
+						
+	</table>
+
+</div> 

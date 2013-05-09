@@ -1,5 +1,19 @@
 ProjThree::Application.routes.draw do
+ 
+ 
+  get "devise/user/view_user_settings_page"
+
+  get "devise/user/view_add_user_page"
+
+  get "devise/user/view_remove_user_page"
+
+  get "devise/user/view_users"
+
   get "devise/user/add_user"
+
+  get "devise/user/remove_user"
+
+  match "devise/user/add_user" => "user#add_user"
 
   get "home/index"
 
@@ -22,8 +36,6 @@ ProjThree::Application.routes.draw do
   get "devise/sports_news/show_sports_news"
 
   get "devise/business_news/show_business_news"
-
-  get "welcome/index"
   
   match "devise/feedback/submit_feedback" => "feedback#submit_feedback"
   

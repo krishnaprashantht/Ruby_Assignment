@@ -59,7 +59,7 @@
 						
 			<% end %>
 
-				<br><br>
+				<br>
 			
 			<% if @preferences.sports_news_preference == 1 %>
 			
@@ -72,7 +72,7 @@
 			
 			<% end %>
 		
-				<br><br>
+				<br>
 			
 			<% if @preferences.latest_news_preference == 1 %>
 			
@@ -85,7 +85,7 @@
 		
 			<% end %>			
 		
-				<br><br>
+				<br>
 			
 			<% if @preferences.popular_news_preference == 1 %>
 			
@@ -98,7 +98,7 @@
 						
 			<% end %>
 
-				<br><br>
+				<br>
 			
 			<% if @preferences.view_feedbacks_preference == 1 %>
 			
@@ -110,8 +110,17 @@
 				</div>
 				
 			<% end %>
+
+			<br>
+
+				<div id="moderate_users" class="moderateUsers, navbar-inner">
+					<h5 class="newsText">Moderate Users</h5>
+					<div id="image" class="arrowImage">
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "devise/user", :action => "view_user_settings_page"})  %>
+					</div>
+				</div>
 			
-				<br><br>
+				<br>
 			
 				<div id="tab_settings" class="tabSettings, navbar-inner">
 					<h5  class="newsText">Settings</h5>
@@ -119,6 +128,8 @@
 						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "devise/settings", :action => "view_settings_page"})  %>
 					</div>
 				</div>
+
+				<br>
 			
 			</div>
 

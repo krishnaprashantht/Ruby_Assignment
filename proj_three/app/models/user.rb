@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role
   # attr_accessible :title, :body
 
-  	def self.add_user(email, password, role)
+  def self.add_user(email, password, confirmpassword, role)
 		User.create(:email => email, :password => password, :role => role)    
 	end
   
@@ -18,6 +18,12 @@ class User < ActiveRecord::Base
 		User.count	
 
 	end
+
+  def self.view_users(page_number)
+        
+    User.paginate(:order =>"created_at DESC",:page => page_number, :per_page => 15)
+    
+  end
 
 #	def self.get_preference
 				

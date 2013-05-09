@@ -1,11 +1,6 @@
 require 'test_helper'
 
-class UserControllerTest < ActionController::TestCase
-  test "should get view_user_settings_page" do
-    get :view_user_settings_page
-    assert_response :success
-  end
-
+class UserviewUserSettingsPageControllerTest < ActionController::TestCase
   test "should get view_add_user_page" do
     get :view_add_user_page
     assert_response :success
