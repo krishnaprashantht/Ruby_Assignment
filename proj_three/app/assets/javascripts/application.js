@@ -13,3 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+function pagePopup(url) {
+		
+	newwindow=window.open(url,'name','height=310,width=250');
+		
+	if (window.focus) {newwindow.focus()}
+		return false;
+
+}
+
+function closePopup() {
+
+	window.alert("Inside JS");
+
+	newwindow.close();
+  
+}

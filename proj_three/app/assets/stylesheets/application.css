@@ -31,15 +31,15 @@
 }
 
 .contentLayout{
-	height: 475px;
-	width: 66.6%;
+	height: 495px;
+	width: 84.54%;
 	border: 1px solid;
 	float: left;
 	padding-bottom: 0.4%;
 }
 
 .contentMenu{
-	height: 480px;
+	height: 500px;
 	width: 14.7%;
 	border: 1px solid;
 	float: left;
@@ -49,18 +49,8 @@
 	height: 30px;
 }
 
-.feedback{
-	height: 460px;
-	width: 17%;
-	border: 1px solid;
-	padding-top: 20px;
-	float: left;
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
-.settings{
-	height: 460px;
+.settings, .feedback{
+	height: 490px;
 	width: 100%;
 	border: 1px solid;
 	padding-top: 10px;
@@ -70,8 +60,8 @@
 }
 
 .footerLayout{
-	height: 10px;
-	width:100%;
+	height: 5px;
+	width:100%;	
 }
 
 .feedbackSpacing{

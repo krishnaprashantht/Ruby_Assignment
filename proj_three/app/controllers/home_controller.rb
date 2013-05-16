@@ -2,8 +2,6 @@ class HomeController < ApplicationController
 
 	def index
 
-		puts "\n\n\n\nInside index method of welcome controller\n\n\n\n"
-
 		@preferences_count = Preference.count_preference
 
 		@count_users = User.count_users

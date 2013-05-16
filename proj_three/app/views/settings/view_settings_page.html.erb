@@ -1,6 +1,6 @@
-	<h2 class="textAlignCenter">Settings</h2>
+<h2 class="text-center">Settings</h2>
 	
-	<%= form_for :settings, :url => { :controller => 'settings', :action => 'set_settings', :method => 'post', :class => 'settings' } do |f| %>
+	<%= form_for :settings, :url => { :controller => 'settings', :action => 'set_settings', :method => 'post', :class => 'settings' }, :html => { :method => "post", :name => "settings", :onsubmit => "closePopup();" } do |f| %>
 	
 		
 		<div id="business_news_check" class="settingCheck">
@@ -38,5 +38,5 @@
 		
 		<br>
 			
-		<%= submit_tag "Save Settings"%>
+		<%= submit_tag "Save Settings" %>
 	<% end %> 	

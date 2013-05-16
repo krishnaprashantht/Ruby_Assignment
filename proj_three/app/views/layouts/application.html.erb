@@ -17,9 +17,11 @@
 </head>
 <body>
 
+	
+
 	<div id="header" class="header, container-fluid, navbar-inner">
 	
-		<h1 class="textAlignCenter">News Dash Board</h1>
+		<h1 class="text-center">News Dash Board</h1>
 
 		<% if current_user %>
 
@@ -36,11 +38,14 @@
 			<div id="content_menu" class="contentMenu">
 			
 				<script>	
+
+					
 					$(function() {
 						$( "#business_news" ).draggable({ containment: "parent" });
 						$( "#sports_news" ).draggable({ containment: "parent" });
 						$( "#latest_news" ).draggable({ containment: "parent" });
 						$( "#popular_news" ).draggable({ containment: "parent" });
+						$( "#view_feedback_page" ).draggable({ containment: "parent" });
 						$( "#view_feedbacks" ).draggable({ containment: "parent" });
 						$( "#tab_settings" ).draggable({ containment: "parent" });
 						$( "#moderate_users" ).draggable({ containment: "parent" });	
@@ -48,6 +53,8 @@
 				</script>
 			
 				<br>
+
+
 			
 			<% if @preferences.business_news_preference == 1 %>
 									
@@ -103,10 +110,23 @@
 			
 			<% if @preferences.view_feedbacks_preference == 1 %>
 			
+				<div id="view_feedback_page" class="submitFeedback, navbar-inner">
+					<h5  class="newsText">Give Feedback</h5>
+					<div id="image" class="arrowImage">
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "feedback", :action => "view_feedback_page"})  %>
+					</div>
+				</div>
+				
+			<% end %>
+
+			<br>
+
+			<% if @preferences.view_feedbacks_preference == 1 %>
+			
 				<div id="view_feedbacks" class="viewFeedback, navbar-inner">
 					<h5  class="newsText">View Feedbacks</h5>
 					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "feedback", :action => "view_feedback"})  %>
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "feedback", :action => "view_feedbacks"})  %>
 					</div>
 				</div>
 				
@@ -130,7 +150,7 @@
 				<div id="tab_settings" class="tabSettings, navbar-inner">
 					<h5  class="newsText">Settings</h5>
 					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "settings", :action => "view_settings_page"})  %>
+						<%= link_to(image_tag("rightarrow.png", :size => "20x20", :onclick => "pagePopup('view_settings_page')"), {:class => "popover" }) %>
 					</div>
 				</div>
 
@@ -139,6 +159,8 @@
 			</div>
 
 		<% end %>
+
+		
 
 		<div id="content_layout" class="contentLayout">
 			
@@ -154,39 +176,23 @@
 			
 		</div>
 
-		<% if current_user %>
 	
-			<div id="feedback" class="feedback">
-		
-				<h2>Feedback</h2>
-		
-				<%= form_for :feedback, :url => { :controller => 'feedback', :action => 'submit_feedback', :method => 'post', :class => 'feedbackSpacing' } do |f| %>
-					<%= f.label :name %>
-					<%= f.text_field :name, :size => 20 %><br />
-					<%= f.label :email %>
-					<%= f.text_field :email, :size => 25 %><br />
-					<%= f.label :feedback %>
-					<%= f.text_area :feedback, :rows => 5, :cols => 5 %><br />
-					<%= submit_tag "Submit Feedback "%>
-				<% end %>
-			</div>
-
-		<% end %>
 		
 	</div>
 
 	<% if current_user %>
-	
+
 		<div id="footer" class="footerLayout">
-		
+
 			<h6>All rights reserved</h6>
-	
+
 		</div>
 
 		<p class="notice"><%= notice %></p>
 		<p class="alert"><%= alert %></p>
 
 	<% end %>
-	
+
+
 </body>
 </html>

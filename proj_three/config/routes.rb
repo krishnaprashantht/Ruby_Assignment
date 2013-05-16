@@ -1,6 +1,12 @@
 ProjThree::Application.routes.draw do
  
  
+  get "feedback/view_feedback_page"
+
+  get "feedback/submit_feedback"
+
+  get "feedback/view_feedbacks"
+
   get "user/view_user_settings_page"
 
   get "user/view_add_user_page"
@@ -41,7 +47,24 @@ ProjThree::Application.routes.draw do
   
   match "settings/set_settings" => "settings#set_settings"
 
-  # The priority is based upon order of creation:
+  # Routing for settings pop up.
+
+  match "view_settings_page" => "settings#view_settings_page"
+
+  match "business_news/view_settings_page" => "settings#view_settings_page"
+
+  match "sports_news/view_settings_page" => "settings#view_settings_page"
+
+  match "latest_news/view_settings_page" => "settings#view_settings_page"
+
+  match "popular_news/view_settings_page" => "settings#view_settings_page"
+
+  match "feedback/view_settings_page" => "settings#view_settings_page"
+
+  match "user/view_settings_page" => "settings#view_settings_page"
+
+  
+    # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:

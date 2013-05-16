@@ -2,7 +2,9 @@ class SettingsController < ApplicationController
 
 	def view_settings_page
   
-		@preferences = Preference.get_preference	
+		@preferences = Preference.get_preference
+
+		render :layout => false	
 	
 	end
 
