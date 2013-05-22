@@ -4,7 +4,7 @@ class SettingsController < ApplicationController
   
 		@preferences = Preference.get_preference
 
-		render :layout => false	
+		#render :layout => false	
 	
 	end
 

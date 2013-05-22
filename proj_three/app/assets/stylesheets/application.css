@@ -16,9 +16,17 @@
 	background-color: #F5FFFA;
 } 
  
- .header{
+.header{
+	background-image: url("background.png");
+	background-color: #7FFFD4;
 	height: 15%;
- }
+}
+
+.headerText{
+	color: red;
+
+
+}
  
  .textAlignCenter{
     text-align: center;
@@ -27,22 +35,24 @@
 .mainLayout{
 	height: 60%;
 	width:100%;
-	border: 2px solid;
+/*	border: 2px solid; */
 }
 
 .contentLayout{
-	height: 495px;
-	width: 84.54%;
-	border: 1px solid;
-	float: left;
+	margin-top: -280px;
+	top: 10px;
+	height: 530px;
+	width: 99.8%;
+	border: 1px solid; 
+	float: left;	
 	padding-bottom: 0.4%;
 }
 
 .contentMenu{
-	height: 500px;
-	width: 14.7%;
-	border: 1px solid;
-	float: left;
+	height: 40px;
+	width: 100%;
+	/* border: 1px solid; */
+	
 }
 
 .settingItem{
@@ -90,16 +100,76 @@
 	padding-right: 20px;
 	
 }
-.businessNews, .sportsNews, .latestNews, .popularNews, .viewFeedback, .tabSettings, .moderateUsers{
-	/*min-height: 10px !important;*/
-	/*max-height: 11px !important;*/
-	
-	padding-bottom:5% !important;
+.businessNews{
+	position: relative; 
+	width: 110px; 
+	left: 0px; 
+	top: 0px;
+	div.newsText {background:blue;}
+}
+
+.sportsNews{
+	position: relative; 
+	width: 110px; 
+	left: 152px; 
+	top: -42px;
+}
+
+.latestNews{
+	position: relative; 
+	width: 110px; 
+	left: 304px; 
+	top: -84px;
+}
+
+.popularNews{
+	position: relative; 
+	width: 110px; 
+	left: 456px; 
+	top: -126px;
+}
+
+.submitFeedback{
+	position: relative; 
+	width: 110px; 
+	left: 608px; 
+	top: -168px;
+}
+
+.viewFeedback{
+	position: relative; 
+	width: 110px; 
+	left: 760px; 
+	top: -210px;
+}
+
+.moderateUsers{
+	position: relative; 
+	width: 110px; 
+	left: 912px; 
+	top: -252px;	
+}
+
+.tabSettings{
+	position: relative; 
+	width: 100px; 
+	left: 1064px; 
+	top: -294px;
+}
+
+.logout{
+	position: relative;
+	width: 100px;
+	left: 1206px;
+	top: -336px;
 }
 
 .newsText{
 	float: left;
+	padding-top: 8px;
 }
+
+
 
 .arrowImage{
 	float: right;

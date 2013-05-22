@@ -1,44 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ProjThree</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= stylesheet_link_tag    "bootstrap", :media => "all" %>
-  <%= stylesheet_link_tag    "bootstrap.min", :media => "all" %>
-  <%= stylesheet_link_tag    "bootstrap-responsive", :media => "all" %>
-  <%= stylesheet_link_tag    "bootstrap-responsive.min", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag "bootstrap" %>
-  <%= javascript_include_tag "bootstrap.min" %>
-  <%= javascript_include_tag "jquery.min" %>
-  <%= javascript_include_tag "jquery-1.9.1" %>
-  <%= javascript_include_tag "jquery-ui" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+  		<title>ProjThree</title>
+  		<%= stylesheet_link_tag    "application", :media => "all" %>
+  		<%= stylesheet_link_tag    "bootstrap", :media => "all" %>
+  		<%= stylesheet_link_tag    "bootstrap.min", :media => "all" %>
+  		<%= stylesheet_link_tag    "bootstrap-responsive", :media => "all" %>
+  		<%= stylesheet_link_tag    "bootstrap-responsive.min", :media => "all" %>
+  		<%= javascript_include_tag "application" %>
+  		<%= javascript_include_tag "bootstrap" %>
+  		<%= javascript_include_tag "bootstrap.min" %>
+  		<%= javascript_include_tag "jquery.min" %>
+  		<%= javascript_include_tag "jquery-1.9.1" %>
+  		<%= javascript_include_tag "jquery-ui" %>
+  		<%= csrf_meta_tags %>
+	</head>
 
+	<body>
+
+		<div id="header" class="header">
+			
+			<marquee behavior="alternate">
+				<h1 class="text-center headerText">News Dash Board</h1>
+			</marquee>
+			
+		</div>
 	
-
-	<div id="header" class="header, container-fluid, navbar-inner">
-	
-		<h1 class="text-center">News Dash Board</h1>
-
-		<% if current_user %>
-
-			<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-
-		<% end %>
-	
-	</div>
-	
-	<div id="main_layout" class="mainLayout">
-
 		<% if current_user %>
 
 			<div id="content_menu" class="contentMenu">
 			
 				<script>	
-
 					
 					$(function() {
 						$( "#business_news" ).draggable({ containment: "parent" });
@@ -49,112 +41,109 @@
 						$( "#view_feedbacks" ).draggable({ containment: "parent" });
 						$( "#tab_settings" ).draggable({ containment: "parent" });
 						$( "#moderate_users" ).draggable({ containment: "parent" });	
+						$( "#logout" ).draggable({ containment: "parent" });	
 					});
+
 				</script>
 			
-				<br>
-
-
-			
-			<% if @preferences.business_news_preference == 1 %>
+				<% if @preferences.business_news_preference == 1 %>
 									
-				<div id="business_news" class="businessNews, navbar-inner">
-					<h5 class="newsText">Business News</h5>
-					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "business_news", :action => "show_business_news"})  %>
+					<div id="business_news" class="businessNews navbar-inner">
+						<span id="business_news_text" class="newsText h5">
+							<%= link_to ("Business News"), {:controller => "business_news", :action => "show_business_news"}  %>
+						</span>
 					</div>
-				</div>
 						
-			<% end %>
+				<% end %>
 
-				<br>
+				
 			
-			<% if @preferences.sports_news_preference == 1 %>
+				<% if @preferences.sports_news_preference == 1 %>
 			
-				<div id="sports_news" class="sportsNews, navbar-inner">
-					<h5 class="newsText">Sports News</h5>
-					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "sports_news", :action => "show_sports_news"})  %>
+					<div id="sports_news" class="sportsNews navbar-inner">
+						<span id="sports_news_text" class="newsText h5">
+							<%= link_to ("Sports News"), {:controller => "sports_news", :action => "show_sports_news"}  %>
+						</span>
 					</div>
-				</div>
 			
-			<% end %>
+				<% end %>
 		
-				<br>
+				
 			
-			<% if @preferences.latest_news_preference == 1 %>
+				<% if @preferences.latest_news_preference == 1 %>
 			
-				<div id="latest_news" class="latestNews, navbar-inner">
-					<h5  class="newsText">Latest News</h5>
-					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "latest_news", :action => "show_latest_news"})  %>
+					<div id="latest_news" class="latestNews navbar-inner">
+						<span id="latest_news_text" class="newsText h5">				
+							<%= link_to ("Latest News"), {:controller => "latest_news", :action => "show_latest_news"}  %>
+						</span>					
 					</div>
-				</div>
 		
-			<% end %>			
+				<% end %>			
 		
-				<br>
+				
 			
-			<% if @preferences.popular_news_preference == 1 %>
+				<% if @preferences.popular_news_preference == 1 %>
 			
-				<div id="popular_news" class="popularNews, navbar-inner">
-					<h5  class="newsText">Popular News</h5>
-					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "popular_news", :action => "show_popular_news"})  %>
+					<div id="popular_news" class="popularNews navbar-inner">
+						<span id="popular_news_text" class="newsText h5">
+							<%= link_to ("Popular News"), {:controller => "popular_news", :action => "show_popular_news"}  %>
+						</span>
 					</div>
-				</div>
 						
-			<% end %>
+				<% end %>
 
-				<br>
-			
-			<% if @preferences.view_feedbacks_preference == 1 %>
-			
-				<div id="view_feedback_page" class="submitFeedback, navbar-inner">
-					<h5  class="newsText">Give Feedback</h5>
-					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "feedback", :action => "view_feedback_page"})  %>
-					</div>
-				</div>
 				
-			<% end %>
-
-			<br>
-
-			<% if @preferences.view_feedbacks_preference == 1 %>
 			
-				<div id="view_feedbacks" class="viewFeedback, navbar-inner">
-					<h5  class="newsText">View Feedbacks</h5>
-					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "feedback", :action => "view_feedbacks"})  %>
+				<% if @preferences.view_feedbacks_preference == 1 %>
+			
+					<div id="view_feedback_page" class="submitFeedback navbar-inner">
+						<span id="view_feedbackpage_text" class="newsText h5">
+							<%= link_to ("Give Feedback"), {:controller => "feedback", :action => "view_feedback_page"}  %>
+						</span>
 					</div>
-				</div>
 				
-			<% end %>
+				<% end %>
 
-			<br>
 
-			<% if current_user.role == "admin" %>
-
-				<div id="moderate_users" class="moderateUsers, navbar-inner">
-					<h5 class="newsText">Moderate Users</h5>
-					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20"), {:controller => "user", :action => "view_user_settings_page"})  %>
-					</div>
-				</div>
+				<% if @preferences.view_feedbacks_preference == 1 %>
 			
-			<% end %>
-
-				<br>
-			
-				<div id="tab_settings" class="tabSettings, navbar-inner">
-					<h5  class="newsText">Settings</h5>
-					<div id="image" class="arrowImage">
-						<%= link_to(image_tag("rightarrow.png", :size => "20x20", :onclick => "pagePopup('view_settings_page')"), {:class => "popover" }) %>
+					<div id="view_feedbacks" class="viewFeedback navbar-inner">
+						<span id="view_feedbacks_text" class="newsText h5">
+							<%= link_to ("View Feedbacks"), {:controller => "feedback", :action => "view_feedbacks"}  %>
+						</span>
 					</div>
+				
+				<% end %>
+
+
+				<% if current_user.role == "admin" %>
+
+					<div id="moderate_users" class="moderateUsers navbar-inner">
+						<span id="moderate_users_text" class="newsText h5">
+							<%= link_to ("Moderate Users"), {:controller => "user", :action => "view_user_settings_page"}  %>
+						</span>
+					</div>
+			
+				<% end %>
+
+				<div id="tab_settings" class="tabSettings navbar-inner">
+					<span id="settings_tab_text" class="newsText h5">
+						<%= link_to ("Settings"), {:controller => "settings", :action => "view_settings_page" } %>
+					</span>
 				</div>
 
-				<br>
+				<% if current_user %>
+
+					<div id="logout" class="logout navbar-inner">
+						<span id="logout_text" class="newsText h5">
+							<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+						</span>
+					</div>
+					
+
+				<% end %>
+
+				
 			
 			</div>
 
@@ -165,34 +154,17 @@
 		<div id="content_layout" class="contentLayout">
 			
 			<% if flash[:alert] %>
-           		<p class="flash-error"><%= flash[:alert] %></p>
-          	<% end %>
+       			<p class="flash-error"><%= flash[:alert] %></p>
+       		<% end %>
           
-          	<% if flash[:notice] %>
-          		<p class="flash-notice"><%= flash[:notice] %></p>
-          	<% end %>
+       		<% if flash[:notice] %>
+       			<p class="flash-notice"><%= flash[:notice] %></p>
+       		<% end %>
 
 			<%= yield %>
 			
 		</div>
 
+	</body>
 	
-		
-	</div>
-
-	<% if current_user %>
-
-		<div id="footer" class="footerLayout">
-
-			<h6>All rights reserved</h6>
-
-		</div>
-
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
-
-	<% end %>
-
-
-</body>
 </html>
