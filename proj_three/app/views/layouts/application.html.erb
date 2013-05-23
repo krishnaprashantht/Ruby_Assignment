@@ -93,7 +93,7 @@
 
 				
 			
-				<% if @preferences.view_feedbacks_preference == 1 %>
+				<% if @preferences.give_feedback_preference == 1 %>
 			
 					<div id="view_feedback_page" class="submitFeedback navbar-inner">
 						<span id="view_feedbackpage_text" class="newsText h5">
@@ -212,6 +212,13 @@
 			</div>
 		
 			<br>
+
+			<div id="give_feedback_check" class="settingCheck">
+				<%= check_box_tag(:give_feedback) %>
+				<%= label_tag(:give_feedback, "Give Feedback", :class => "checkbox inline") %>
+			</div>
+
+			<br>
 			
 			<div id="view_feedbacks_check" class="settingCheck">
 				<%= check_box_tag(:view_feedbacks) %>
@@ -219,15 +226,16 @@
 			</div>
 		
 			<br>
+
+		<%= submit_tag "Save Settings" %>
 			
-			<%= submit_tag "Save Settings" %>
-		
 		<% end %> 	
 
   	</div>
   
   	<div class="modal-footer">
-    	
+
+
   	</div>
 
 </div>

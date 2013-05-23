@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507072333) do
+ActiveRecord::Schema.define(:version => 20130523112042) do
 
   create_table "feedbacks", :force => true do |t|
     t.string   "name"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20130507072333) do
     t.integer  "view_feedbacks_preference", :precision => 38, :scale => 0
     t.datetime "created_at",                                               :null => false
     t.datetime "updated_at",                                               :null => false
+    t.integer  "givefeedbackpreference",    :precision => 38, :scale => 0
+    t.integer  "give_feedback_preference",  :precision => 38, :scale => 0
   end
 
   create_table "users", :force => true do |t|

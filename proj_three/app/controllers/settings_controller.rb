@@ -14,6 +14,7 @@ class SettingsController < ApplicationController
 		sports_news = params[:sports_news]
 		latest_news = params[:latest_news]
 		popular_news = params[:popular_news]
+		give_feedback = params[:give_feedback]
 		view_feedbacks = params[:view_feedbacks]
 	
 	
@@ -40,6 +41,12 @@ class SettingsController < ApplicationController
 		else
 			latest_news = 1
 		end
+
+		if give_feedback.nil?
+			give_feedback = 0
+		else
+			give_feedback = 1
+		end
 	
 		if view_feedbacks.nil?
 			view_feedbacks = 0
@@ -47,7 +54,7 @@ class SettingsController < ApplicationController
 			view_feedbacks = 1
 		end
 	
-		Preference.insert_preference(business_news, sports_news, latest_news, popular_news, view_feedbacks)
+		Preference.insert_preference(business_news, sports_news, latest_news, popular_news,give_feedback, view_feedbacks)
 		
 		@preferences = Preference.get_preference	
   
