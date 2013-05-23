@@ -6,8 +6,8 @@
 development:
   adapter: oracle_enhanced
   database: ORACLE_XE
-  username: rubyassignment
-  password: rubyassignment
+  username: news
+  password: news
   
   
 # Warning: The database defined as "test" will be erased and

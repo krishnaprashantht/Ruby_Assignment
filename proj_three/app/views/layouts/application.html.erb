@@ -173,7 +173,7 @@
 </html>
 
 
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" onload="settingsPopup()">
+<div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" onload="settingsPopup()">
 
 	<div class="modal-header">
     	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -187,35 +187,35 @@
 		
 			<div id="business_news_check" class="settingCheck">
 				<%= check_box_tag(:business_news) %>
-				<%= label_tag(:business_news, "Business News") %>
+				<%= label_tag(:business_news, "Business News", :class => "checkbox inline") %>
 			</div>
 		
 			<br>
 		
 			<div id="sports_news_check" class="settingCheck">
 				<%= check_box_tag(:sports_news) %>
-				<%= label_tag(:sports_news, "Sports News") %>
+				<%= label_tag(:sports_news, "Sports News", :class => "checkbox inline") %>
 			</div>
 		
 			<br>
 		
 			<div id="latest_news_check" class="settingCheck">
 				<%= check_box_tag(:latest_news) %>
-				<%= label_tag(:latest_news, "Latest News") %>
+				<%= label_tag(:latest_news, "Latest News", :class => "checkbox inline") %>
 			</div>
 		
 			<br>
 		
 			<div id="popular_news_check" class="settingCheck">
 				<%= check_box_tag(:popular_news) %>
-				<%= label_tag(:popular_news, "Popular News") %>
+				<%= label_tag(:popular_news, "Popular News", :class => "checkbox inline") %>
 			</div>
 		
 			<br>
 			
 			<div id="view_feedbacks_check" class="settingCheck">
 				<%= check_box_tag(:view_feedbacks) %>
-				<%= label_tag(:view_feedbacks, "View Feedbacks") %>
+				<%= label_tag(:view_feedbacks, "View Feedbacks", :class => "checkbox inline") %>
 			</div>
 		
 			<br>
