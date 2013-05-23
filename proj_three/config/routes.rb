@@ -29,7 +29,7 @@ ProjThree::Application.routes.draw do
 
   get "settings/set_settings"
 
-  get "devise/settings/retreive_settings"
+  get "settings/retreive_settings"
 
   get "feedback/submit_feedback"
 
@@ -42,6 +42,8 @@ ProjThree::Application.routes.draw do
   get "sports_news/show_sports_news"
 
   get "business_news/show_business_news"
+
+  get "devise/settings/set_settings"
   
   match "feedback/submit_feedback" => "feedback#submit_feedback"
   
@@ -62,6 +64,10 @@ ProjThree::Application.routes.draw do
   match "feedback/view_settings_page" => "settings#view_settings_page"
 
   match "user/view_settings_page" => "settings#view_settings_page"
+
+  match 'devise/settings/set_settings' => 'settings#set_settings'
+  
+  match '/signout', :to => 'sessions#destroy'
 
   
     # The priority is based upon order of creation:

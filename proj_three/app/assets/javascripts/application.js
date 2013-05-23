@@ -21,9 +21,14 @@ function pagePopup(url) {
 	
 }
 
-function businessClick(){
-	alert("Inside Business Click");
+function settingsPopup(){
+	//var d = getElementById("myModal");
+	//var a = 10000;
+
+	
 }
+
+
 
 function closePopup() {
 
