@@ -25,6 +25,12 @@ class User < ActiveRecord::Base
     
   end
 
+  def self.signin_count
+
+    User.sum("sign_in_count")
+
+  end
+
 #	def self.get_preference
 				
 #		Preference.first

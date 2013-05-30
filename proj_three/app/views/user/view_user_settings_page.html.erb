@@ -2,8 +2,10 @@
 
 <br><br><br><br><br><br>
 
-<%= link_to "Add User", {:controller => "user", :action => "view_add_user_page"}  %>
+<div id="add_user_link" class="addUserLink navbar-inner">
+	<%= link_to "Add User", {:controller => "user", :action => "view_add_user_page"}  %>
+</div>
 
-<br><br><br><br><br><br>
-
-<%= link_to "View Users", {:controller => "user", :action => "view_users"}  %>
+<div id="vies_users_link" class="viewUsersLink navbar-inner">
+	<%= link_to "View Users", {:controller => "user", :action => "view_users"}  %>
+</div>

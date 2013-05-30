@@ -1,13 +1,5 @@
 class SettingsController < ApplicationController
 
-	def view_settings_page
-  
-		@preferences = Preference.get_preference
-
-		#render :layout => false	
-	
-	end
-
 	def set_settings
   
 		business_news = params[:business_news]

@@ -3,8 +3,6 @@ ProjThree::Application.routes.draw do
  
   get "feedback/view_feedback_page"
 
-  get "feedback/submit_feedback"
-
   get "feedback/view_feedbacks"
 
   get "user/view_user_settings_page"
@@ -25,13 +23,9 @@ ProjThree::Application.routes.draw do
 
   devise_for :users, path_names: { sign_out: 'sign_out' }
 
-  get "settings/view_settings_page"
-
-  get "settings/set_settings"
-
   get "settings/retreive_settings"
 
-  get "feedback/submit_feedback"
+  get "devise/feedback/submit_feedback"
 
   get "feedback/view_feedback"
 
@@ -45,27 +39,27 @@ ProjThree::Application.routes.draw do
 
   get "devise/settings/set_settings"
   
-  match "feedback/submit_feedback" => "feedback#submit_feedback"
+  match "devise/feedback/submit_feedback" => "feedback#submit_feedback"
   
   match "settings/set_settings" => "settings#set_settings"
 
   # Routing for settings pop up.
 
-  match "view_settings_page" => "settings#view_settings_page"
+#  match "view_settings_page" => "settings#view_settings_page"
 
-  match "business_news/view_settings_page" => "settings#view_settings_page"
+ # match "business_news/view_settings_page" => "settings#view_settings_page"
 
-  match "sports_news/view_settings_page" => "settings#view_settings_page"
+#  match "sports_news/view_settings_page" => "settings#view_settings_page"
 
-  match "latest_news/view_settings_page" => "settings#view_settings_page"
+ # match "latest_news/view_settings_page" => "settings#view_settings_page"
 
-  match "popular_news/view_settings_page" => "settings#view_settings_page"
+  #match "popular_news/view_settings_page" => "settings#view_settings_page"
 
-  match "feedback/view_settings_page" => "settings#view_settings_page"
+  #match "settings/view_settings_page" => "settings#view_settings_page"
 
-  match "user/view_settings_page" => "settings#view_settings_page"
+  #match "user/view_settings_page" => "settings#view_settings_page"
 
-  match 'devise/settings/set_settings' => 'settings#set_settings'
+  #match 'settings/set_settings' => 'settings#set_settings'
   
   match '/signout', :to => 'sessions#destroy'
 
