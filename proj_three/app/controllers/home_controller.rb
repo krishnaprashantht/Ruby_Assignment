@@ -2,6 +2,8 @@ class HomeController < ApplicationController
 
 	def index
 
+		
+
 		@signin_count = User.signin_count
 
 		@preferences_count = Preference.count_preference

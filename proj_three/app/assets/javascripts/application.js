@@ -37,3 +37,40 @@ function closePopup() {
 	window.close();
   
 }
+
+function loadXMLDoc(){
+
+	alert("Inside loadXMLDoc");
+	
+	var xmlhttp;
+	
+	
+	if (window.XMLHttpRequest)
+  	{// code for IE7+, Firefox, Chrome, Opera, Safari
+  		xmlhttp=new XMLHttpRequest();
+  	}
+  	
+  	else
+  	{// code for IE6, IE5
+  		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  	}
+	
+	xmlhttp.onreadystatechange=function()
+  	{
+  		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    	{
+    		document.getElementById("content_layout").innerHTML=xmlhttp.responseText;
+    	}
+  	}
+	
+	xmlhttp.open("GET","show_business_news.html.erb",true);
+	xmlhttp.send();
+
+}
+
+
+function displayTimestamp(){
+	var timestamp = new Date();
+	//var timestamp = new Date();
+	document.getElementById('time_text').innerHTML = timestamp;
+}

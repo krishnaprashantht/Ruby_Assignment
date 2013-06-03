@@ -62,5 +62,8 @@ module ProjThree
     #For asset precompilation
     config.assets.initialize_on_precompile = false
 
+    #For making remote => true to work
+    config.action_view.javascript_expansions[:defaults] = %w(jquery jquery_ujs)
+
   end
 end

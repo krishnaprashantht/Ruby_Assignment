@@ -310,7 +310,14 @@ border:solid 1px #666666;
 }
 
 
+.timeStamp{
+	color: white;
+}
 
+.hitCounter{
+	padding-bottom: 200px;
+	height:100px;
+}
  
 
   

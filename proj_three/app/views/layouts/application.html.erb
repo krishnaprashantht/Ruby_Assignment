@@ -13,6 +13,7 @@
   		<%= javascript_include_tag "jquery.min" %>
   		<%= javascript_include_tag "jquery-1.9.1" %>
   		<%= javascript_include_tag "jquery-ui" %>
+  		<%= javascript_include_tag "jquery-ujs" %>
   		<%= javascript_include_tag "prototype" %>
   		<%= javascript_include_tag "scriptaculous" %>
   		<%= javascript_include_tag "simple-slide-show" %>
@@ -20,14 +21,20 @@
   		<%= csrf_meta_tags %>
 	</head>
 
-	<body>	
+	<body onload="displayTimestamp()">	
 
 		<div id="wrapper">
 
 			<div id="header" class="header">
 
 				<p class="text-center headerText ">News Dash Board</p>
-	
+
+				<span id="time_stamp" class="timeStamp">
+
+					<p id="time_text" class="text-center"></p>
+
+				</span>
+
 			</div>
 	
 			<% if current_user %>
@@ -54,7 +61,7 @@
 									
 						<div id="business_news" class="businessNews navbar-inner">
 							<span id="business_news_text" class="newsText h5">
-								<%= link_to ("Business"), {:controller => "business_news", :action => "show_business_news"}  %>
+								<%= link_to "Business", {:controller => "business_news", :action => "show_business_news"} %>
 							</span>
 						</div>
 						
@@ -207,6 +214,14 @@
 
 				<%= yield %>
 			
+			</div>
+
+			<div id="hit_counter" class="hitCounter">
+
+				<a href="http://www.tinycounter.com" target="_blank" title="free web counter">
+					<img border="0" alt="free web counter" src="http://mycounter.tinycounter.com/index.php?user=krishnaprashantht">
+				</a>
+
 			</div>
 
 			<div id="disqus_thread"></div>
