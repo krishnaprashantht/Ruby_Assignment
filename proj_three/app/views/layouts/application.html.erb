@@ -218,11 +218,22 @@
 
 			<div id="hit_counter" class="hitCounter">
 
-				<a href="http://www.tinycounter.com" target="_blank" title="free web counter">
-					<img border="0" alt="free web counter" src="http://mycounter.tinycounter.com/index.php?user=krishnaprashantht">
-				</a>
+				<!-- hitwebcounter Code START -->
+				
+				<span id="hit_number" class="hitNumber">
 
+					<p>Number of visits: <%=h @signin_count %></p>
+
+					<div align='center'><a href='http://www.hit-counts.com'><img src='http://www.hit-counts.com/counter.php?t=MTI1MjgwMA==' border='0' alt='Web Counter'></a><BR><a href='http://www.hit-counts.com'>Web Counter</a></div>
+
+				</span>
+
+
+				
+  				
 			</div>
+
+			<br><br><br><br><br><br><br><br><br><br>
 
 			<div id="disqus_thread"></div>
     			<script type="text/javascript">
@@ -237,20 +248,22 @@
     			</script>
     			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     			<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>    	
+    		</div>
+
+    		<script type="text/javascript">
+    
+    			var disqus_shortname = 'newsdashboard'; // required: replace example with your forum shortname
+    			(function () {
+        			var s = document.createElement('script'); s.async = true;
+        			s.type = 'text/javascript';
+        			s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    			}());
+    	
+    		</script>
+
     	</div>
 
-    	<script type="text/javascript">
-    
-    		var disqus_shortname = 'newsdashboard'; // required: replace example with your forum shortname
-    		(function () {
-        		var s = document.createElement('script'); s.async = true;
-        		s.type = 'text/javascript';
-        		s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    		}());
-    	
-    	</script>
-    
 
 	</body>
 	

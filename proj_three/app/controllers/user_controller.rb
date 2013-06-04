@@ -48,4 +48,5 @@ class UserController < ApplicationController
     @preferences = Preference.get_preference
 
   end
+
 end

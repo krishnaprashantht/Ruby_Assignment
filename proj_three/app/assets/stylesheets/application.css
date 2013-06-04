@@ -315,8 +315,13 @@ border:solid 1px #666666;
 }
 
 .hitCounter{
-	padding-bottom: 200px;
-	height:100px;
+	padding-top:100px;
+	height:300px;
+}
+
+.hitNumber{
+	background-color: grey;
+	color: #CC0033;
 }
  
 
