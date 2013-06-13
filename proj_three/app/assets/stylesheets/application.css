@@ -113,6 +113,11 @@ background-color: #FFF;
 	
 }
 
+.newsFeed{
+	height: 450px;
+	width: 1050px;
+}
+
 /*.businessNews{
 	position: relative; 
 	width: 110px; 

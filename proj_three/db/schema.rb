@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20130523112042) do
     t.integer  "view_feedbacks_preference", :precision => 38, :scale => 0
     t.datetime "created_at",                                               :null => false
     t.datetime "updated_at",                                               :null => false
-    t.integer  "givefeedbackpreference",    :precision => 38, :scale => 0
     t.integer  "give_feedback_preference",  :precision => 38, :scale => 0
   end
 

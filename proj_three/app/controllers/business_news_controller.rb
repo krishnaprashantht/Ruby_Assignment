@@ -3,15 +3,15 @@ class BusinessNewsController < ApplicationController
 	
 		@preferences = Preference.get_preference
 
+
+		respond_to do |format|     
+			format.js
+ 		end 
+
 		
-
-
 	#	puts "\n\n\n\nInside Business controller -- before render partial\n\n\n\n"
 
-		#respond_to do |format|
-		#	puts "\n\n\n\nInside Business controller -- respond_to method\n\n\n\n"
- 		#	format.js	
-	#	end
+		
 		
 		#render :partial => 'show_business_news'
 

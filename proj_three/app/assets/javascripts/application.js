@@ -73,6 +73,7 @@ function displayTimestamp(){
 	var timestamp = new Date();
 	//var timestamp = new Date();
 	document.getElementById('time_text').innerHTML = timestamp;
+    
 }
 
 
@@ -273,3 +274,38 @@ function dispplayOdometer() {
 }
 
 /******************* End of Odometer code ***************/
+
+
+function displayBusiNews(){
+    alert('inside js function before send');
+    var busi = document.getElementById("busi");
+    alert(busi);
+    var wrap = document.getElementById("wrapper");
+    alert(wrap);
+    var spin = document.getElementById("spinner_page");
+    alert(spin);
+
+//    $('wrap').fadeTo('slow',0.4);
+//    $('spin').show();
+
+/*    $('busi').bind('ajax:beforeSend', function(evt, data, status, xhr){
+
+        alert('bind');
+        $('wrap').fadeTo('slow',0.4);
+        $('spin').show();
+
+    });
+
+    $(document).ready(function(){
+        alert('inside ready');
+        $("busi").click(function(){
+            alert('inside document ready');
+            $("wrap").fadeTo("slow",0.4);
+        });
+    }); */
+                                            
+}
+
+
+
+    

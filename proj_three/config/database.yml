@@ -6,8 +6,8 @@
 development:
   adapter: oracle_enhanced
   database: ORACLE_XE
-  username: news
-  password: news
+  username: tata
+  password: tata
   
   
 # Warning: The database defined as "test" will be erased and

@@ -8,7 +8,10 @@
   		<%= stylesheet_link_tag    "bootstrap.min", :media => "all" %>
   		<%= stylesheet_link_tag    "bootstrap-responsive", :media => "all" %>
   		<%= stylesheet_link_tag    "bootstrap-responsive.min", :media => "all" %>
+  		<%= stylesheet_link_tag    "jquery-ui", :media => "all" %>
   		<%= javascript_include_tag "application" %>
+  		<%= javascript_include_tag "bootstrap" %>
+  		<%= javascript_include_tag "bootstrap.min" %>
   		<%= javascript_include_tag "bootstrap" %>
   		<%= javascript_include_tag "jquery.min" %>
   		<%= javascript_include_tag "jquery-1.9.1" %>
@@ -55,13 +58,18 @@
 							$( "#logout" ).draggable({ containment: "parent" });	
 						});
 
+
+
 					</script>
 			
 					<% if @preferences.business_news_preference == 1 %>
 									
 						<div id="business_news" class="businessNews navbar-inner">
 							<span id="business_news_text" class="newsText h5">
-								<%= link_to "Business", {:controller => "business_news", :action => "show_business_news"} %>
+								
+								<%= link_to "Business", "/business_news/show_business_news", :remote => true, :id => "busi" %>
+
+								
 							</span>
 						</div>
 						
@@ -72,7 +80,7 @@
 			
 						<div id="sports_news" class="sportsNews navbar-inner">
 							<span id="sports_news_text" class="newsText h5">
-								<%= link_to ("Sports"), {:controller => "sports_news", :action => "show_sports_news"}  %>
+								<%= link_to "Sports", "/sports_news/show_sports_news", :remote => true, :id => "spor" %>
 							</span>
 						</div>	
 					
@@ -82,8 +90,8 @@
 					<% if @preferences.latest_news_preference == 1 %>
 			
 						<div id="latest_news" class="latestNews navbar-inner">
-							<span id="latest_news_text" class="newsText h5">				
-								<%= link_to ("Latest"), {:controller => "latest_news", :action => "show_latest_news"}  %>
+							<span id="latest_news_text" class="newsText h5">
+								<%= link_to "Latest", "/latest_news/show_latest_news", :remote => true, :id => "late" %>
 							</span>					
 						</div>
 		
@@ -95,7 +103,7 @@
 			
 						<div id="popular_news" class="popularNews navbar-inner">
 							<span id="popular_news_text" class="newsText h5">
-								<%= link_to ("Popular"), {:controller => "popular_news", :action => "show_popular_news"}  %>
+								<%= link_to "Popular", "/popular_news/show_popular_news", :remote => true, :id => "popu" %>
 							</span>
 						</div>
 						
@@ -212,7 +220,7 @@
        				<p class="flash-notice"><%= flash[:notice] %></p>
        			<% end %>
 
-				<%= yield %>
+       			<%= yield %>
 			
 			</div>
 
@@ -365,4 +373,23 @@
 
   	</div>
 
+</div>
+
+<!--  Start of Code for jquery ajax effects before send -->
+
+<script>
+	
+	jQuery(document).bind("ajax:beforeSend", function() {
+										
+		jQuery('#wrapper').fadeTo('slow',0.4);
+		jQuery('#spinner_page').show();
+	
+	});
+
+</script>
+
+<!--  End of Code for jquery ajax effects before send -->
+
+<div id="spinner_page" style="display:none;margin-left:365px;margin-top:-248px;position:absolute;">
+    <%=image_tag "ajax-loader.gif" %>
 </div>
