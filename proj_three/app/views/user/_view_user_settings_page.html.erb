@@ -1,0 +1,43 @@
+<h2 class="text-center">Moderator options</h2>
+
+<br><br><br><br><br><br>
+
+<div id="add_user_link" class="addUserLink navbar-inner">
+	<%= link_to "Add User", "#addUser", :data => {:toggle => "modal"}, :role => "button" %>
+</div>
+
+<div id="view_users_link" class="viewUsersLink navbar-inner">
+	<%= link_to "View Users", "/user/view_users", :remote => true, :id => "vius" %>
+</div>
+
+
+<div id="addUser" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+	<div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    	<h3 id="myModalLabel">Add User</h3>
+  	</div>
+  
+	<div class="modal-body">
+    	
+		<%= form_for :user, :html => { :onsubmit => 'return validateAddUser();' }, :url => { :controller => 'user', :action => 'add_user' } do |u| %>
+
+			<%= u.label :Email %>
+			<%= u.text_field :email, :type => "email", :id => "useremail", :size => 25 %><br />
+	
+			<%= u.label :Password %>
+			<%= u.text_field :password, :type => "password", :id => "password", :size => 25 %><br />
+
+			<%= check_box_tag(:admin) %>
+			<%= label_tag(:admin, "Make Admin") %>
+				
+	</div>
+  
+  	<div class="modal-footer">
+	  		<%= submit_tag "Add User", :class => 'button' %>
+			
+		<% end %> 
+
+  	</div>
+
+</div>

@@ -32,7 +32,7 @@ function settingsPopup(){
 
 function closePopup() {
 
-	window.alert("Inside JS");
+	document.getElementById("wrapper").style.zIndex="1";
 
 	window.close();
   
@@ -70,10 +70,21 @@ function loadXMLDoc(){
 
 
 function displayTimestamp(){
+    var wrap = document.getElementById("page");
 	var timestamp = new Date();
 	//var timestamp = new Date();
 	document.getElementById('time_text').innerHTML = timestamp;
-    
+    validateAddUser();
+    if(flag==1)
+    {
+        alert('after submission');
+        wrap.style.zIndex = 1350+1;
+    }
+    else
+    {
+        alert('before submission');
+        wrap.style.zIndex = 1349;
+    }
 }
 
 
@@ -306,6 +317,70 @@ function displayBusiNews(){
                                             
 }
 
+/******** Start for validating feedback ********/
 
+function validateFeedback(){
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var feedback = document.getElementById("feedback").value;
+    
+    if(name.length<3)
+    {
+        alert('Name should be more than 3 characters');
+        return false;
+    }
+
+    else if(email.length<1)
+    {
+        alert('Email field cannot be empty');
+        return false;
+    }
+
+    else if(feedback.length<10)
+    {
+        alert('Feedback cannot be less than 10 characters');
+        return false;
+    }
+}
+
+function validateAddUser(){
+
+    //var flag = 0;
+
+    var wrap = document.getElementById("page");
+    //document.getElementById("wrapper").style.zIndex="1";
+
+    var email = document.getElementById("useremail").value;
+    var password = document.getElementById("password").value;
+    
+    if(email.length<1)
+    {
+        alert('email cannot be null');
+        return false;
+    }
+
+    else if(password.length<8)
+    {
+        alert('Password should be minimum 8 characters');
+        return false;
+    }
+
+    else
+    {
+        var flag=1;
+
+    }
+    
+    wrap.style.zIndex = 1349+1;
+    
+}
+
+function giveFeedback(){
+    alert('hahaha');
+}
+
+function addUserForm(){
+    alert('yoyo');
+}
 
     

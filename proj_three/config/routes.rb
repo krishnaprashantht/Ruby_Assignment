@@ -40,7 +40,7 @@ ProjThree::Application.routes.draw do
   
   match "devise/feedback/submit_feedback" => "feedback#submit_feedback"
   
-  match "settings/set_settings" => "settings#set_settings"
+  match "devise/settings/set_settings" => "settings#set_settings"
 
   # Routing for settings pop up.
 

@@ -26,6 +26,8 @@
 
 	<body onload="displayTimestamp()">	
 
+		<div id="page">
+
 		<div id="wrapper">
 
 			<div id="header" class="header">
@@ -125,7 +127,7 @@
 			
 						<div id="view_feedbacks" class="viewFeedback navbar-inner">
 							<span id="view_feedbacks_text" class="newsText h5">
-								<%= link_to ("View Feedbacks"), {:controller => "feedback", :action => "view_feedbacks"}  %>
+								<%= link_to "View Feedbacks", "/feedback/view_feedbacks", :remote => true, :id => "vife" %>
 							</span>
 						</div>
 				
@@ -136,7 +138,7 @@
 
 						<div id="moderate_users" class="moderateUsers navbar-inner">
 							<span id="moderate_users_text" class="newsText h5">
-								<%= link_to ("Admin"), {:controller => "user", :action => "view_user_settings_page"}  %>
+								<%= link_to "Admin", "/user/view_user_settings_page", :remote => true, :id => "viad" %>
 							</span>
 						</div>
 			
@@ -272,6 +274,7 @@
 
     	</div>
 
+    </div>
 
 	</body>
 	
@@ -354,14 +357,14 @@
   
 	<div class="modal-body">
     	
-		<%= form_for :feedback, :url => { :controller => 'feedback', :action => 'submit_feedback', :method => 'post' } do |f| %>
+		<%= form_for :feedback, :html => { :onsubmit => 'return validateFeedback();' }, :url => { :controller => 'feedback', :action => 'submit_feedback', :method => 'post' } do |f| %>
 	
 			<%= f.label :name %>
-			<%= f.text_field :name, :size => 20, :class => 'textarea' %><br />
+			<%= f.text_field :name, :id => 'name', :size => 20, :class => 'textarea' %><br />
 			<%= f.label :email %>
-			<%= f.text_field :email, :type => 'email', :size => 25, :class => 'textarea' %><br />
+			<%= f.text_field :email, :id => 'email', :type => 'email', :size => 25, :class => 'textarea' %><br />
 			<%= f.label :feedback %>
-			<%= f.text_area :feedback, :rows => 5, :cols => 5, :class => 'textarea' %><br />
+			<%= f.text_area :feedback, :id => 'feedback', :rows => 5, :cols => 5, :class => 'textarea' %><br />
 		
 	</div>
   
@@ -378,15 +381,17 @@
 <!--  Start of Code for jquery ajax effects before send -->
 
 <script>
+
 	
 	jQuery(document).bind("ajax:beforeSend", function() {
-										
 		jQuery('#wrapper').fadeTo('slow',0.4);
 		jQuery('#spinner_page').show();
 	
 	});
 
 </script>
+
+
 
 <!--  End of Code for jquery ajax effects before send -->
 

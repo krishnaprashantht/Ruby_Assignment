@@ -13,13 +13,21 @@
  */
  
 .Layout{
-	background-color: #F5FFFA;
+	background-color: #F5FFFA;	
+}
+
+#page {
+	position: relative;
+	/*max-width: 1050px;*/
+	margin: 0 auto;	
+	background-color: #FFF; 
 }
 
 #wrapper {
-max-width: 1050px;
-margin: 0 auto;
-background-color: #FFF; 
+	position: relative;
+	max-width: 1050px;
+	margin: 0 auto;	
+	background-color: #FFF; 
 }
 
 .header{
@@ -390,5 +398,10 @@ border:solid 1px #666666;
 	padding-left:10px;
 	height: 300px;
 	border: 1px solid;
+}
+
+.addUserForm{
+	border-spacing: 25px;
+	background-position: 50% 50%;
 }
 

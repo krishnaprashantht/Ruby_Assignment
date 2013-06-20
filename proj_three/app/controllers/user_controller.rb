@@ -3,11 +3,20 @@ class UserController < ApplicationController
 
     @preferences = Preference.get_preference
 
+    respond_to do |format|     
+      format.js
+    end 
+
+
   end
 
   def view_add_user_page
 
     @preferences = Preference.get_preference
+
+    respond_to do |format|     
+      format.js
+    end 
 
   end
 
@@ -22,6 +31,11 @@ class UserController < ApplicationController
     page_number = params[:page];
     @users = User.view_users(page_number)
     @preferences = Preference.get_preference
+
+    respond_to do |format|    
+      puts "\n\n\n\nInside view_users -- respond js" 
+      format.js
+    end
 
   end
 
@@ -41,6 +55,9 @@ class UserController < ApplicationController
 
     @preferences = Preference.get_preference
 
+    
+ 
+    
   end
 
   def remove_user
